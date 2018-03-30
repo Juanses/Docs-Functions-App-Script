@@ -1,9 +1,10 @@
 var DocClass = function(){
   this.openById = function (id) {
-    var doc = DocumentApp.openById(id);
-    response.title = doc.getName();
-    response.body = doc.getBody().getText();
-    response.url = doc.getUrl();
+    this.doc = DocumentApp.openById(id);
+    this.title = this.doc.getName();
+    this.body = this.doc.getBody();
+    this.text = this.body.getText();
+    this.url = this.doc.getUrl();
     return response
   }
 }
