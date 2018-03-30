@@ -7,4 +7,10 @@ var DocClass = function(){
     this.url = this.doc.getUrl();
     return response
   }
+  
+  function replaceKeywordsinDoc(keywords,divider){
+    for (var key in keywordsobject) { 
+      this.doc.replaceText("(?i)"+divider+key+divider,keywords[key]);
+    }  
+  }
 }
